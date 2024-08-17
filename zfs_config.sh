@@ -1,0 +1,9 @@
+BOOT_DISK=/dev/disk/by-id/virtio-12345678
+POOL_DISK=/dev/disk/by-id/virtio-12345678
+BOOT_PART=1
+POOL_PART=9
+SWAP_PART=2
+SWAP_SIZE=$(awk '/MemTotal/ { printf "%.3f \n", $2/1024/1024 }' /proc/meminfo | cut -d '.' -f 1)
+ENCRYPTION_KEY=changeme
+TARGET_CODENAME=trixie
+HOSTNAME=testvm.hosts.gordonschulz.de
